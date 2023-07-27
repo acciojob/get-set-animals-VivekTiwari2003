@@ -1,48 +1,24 @@
-class Animal {
-  constructor(species) {
-    this._species = species;
-  }
+public class Animal {
+    private String species;
 
-  get species() {
-    return this._species;
-  }
+    public Animal(String species) {
+        this.species = species;
+    }
 
-  makeSound() {
-    console.log("Animal sound");
-  }
+    public String getSpecies() {
+        return this.species;
+    }
+
+    public void makeSound() {
+        System.out.println("Animal sound");
+    }
 }
+public class Cat extends Animal {
+    public Cat(String species) {
+        super(species);
+    }
 
-class Cat extends Animal {
-  purr() {
-    console.log("purr");
-  }
-
-  makeSound() {
-    console.log("Meow");
-  }
+    public void purr() {
+        System.out.println("purr");
+    }
 }
-
-class Dog extends Animal {
-  bark() {
-    console.log("woof");
-  }
-
-  makeSound() {
-    console.log("Bark");
-  }
-}
-
-// Example usage:
-const animal = new Animal("Unknown");
-console.log("Animal species:", animal.species);
-animal.makeSound(); // Output: Animal sound
-
-const cat = new Cat("Cat");
-console.log("Cat species:", cat.species);
-cat.makeSound(); // Output: Meow
-cat.purr(); // Output: purr
-
-const dog = new Dog("Dog");
-console.log("Dog species:", dog.species);
-dog.makeSound(); // Output: Bark
-dog.bark(); // Output: woof
